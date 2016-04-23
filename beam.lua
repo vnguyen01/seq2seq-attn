@@ -548,8 +548,8 @@ function main()
    State = StateAll
    local sent_id = 0
    pred_sents = {}
-   local file = io.open(opt.src_file, "r")
-   local out_file = io.open(opt.output_file,'w')   
+   local file = assert(io.open(opt.src_file, "r"))
+   local out_file = assert(io.open(opt.output_file,'w'))   
    for line in file:lines() do
       sent_id = sent_id + 1
       line = clean_sent(line)      
